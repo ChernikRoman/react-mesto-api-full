@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e842436a.chunk.css",
+    "main.js": "/static/js/main.bbfb0d8c.chunk.js",
+    "main.js.map": "/static/js/main.bbfb0d8c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.00c1b0df.js",
+    "runtime-main.js.map": "/static/js/runtime-main.00c1b0df.js.map",
+    "static/js/2.342af017.chunk.js": "/static/js/2.342af017.chunk.js",
+    "static/js/2.342af017.chunk.js.map": "/static/js/2.342af017.chunk.js.map",
+    "static/js/3.cafe84fc.chunk.js": "/static/js/3.cafe84fc.chunk.js",
+    "static/js/3.cafe84fc.chunk.js.map": "/static/js/3.cafe84fc.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e842436a.chunk.css.map": "/static/css/main.e842436a.chunk.css.map",
+    "static/js/2.342af017.chunk.js.LICENSE.txt": "/static/js/2.342af017.chunk.js.LICENSE.txt",
+    "static/media/Error.df8eddf6.svg": "/static/media/Error.df8eddf6.svg",
+    "static/media/index.css": "/static/media/like-button.87ed3714.svg",
+    "static/media/OK.1b6082f8.svg": "/static/media/OK.1b6082f8.svg",
+    "static/media/mesto-logo.03b78ada.svg": "/static/media/mesto-logo.03b78ada.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00c1b0df.js",
+    "static/js/2.342af017.chunk.js",
+    "static/css/main.e842436a.chunk.css",
+    "static/js/main.bbfb0d8c.chunk.js"
+  ]
+}

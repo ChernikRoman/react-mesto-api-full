@@ -1,5 +1,5 @@
 const validator = require('validator');
-const IncorrectRequesError = require('../middlewares/incorrectRequestError');
+const IncorrectRequesError = require('../errors/incorrectRequestError');
 
 function checkLink(link) {
   if (validator.isURL(link)) {

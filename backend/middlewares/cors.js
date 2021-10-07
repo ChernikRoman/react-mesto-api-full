@@ -2,7 +2,7 @@
 function corsHandler(req, res, next) {
   const allowedOrigin = [
     'https://frontend-mesto-domain.nomoredomains.club',
-    'https://backend-mesto-domain.nomoredomains.club',
+    'http://frontend-mesto-domain.nomoredomains.club',
     'http://localhost:3001',
   ];
   const allowedMethods = 'GET,PUT,HEAD,PATCH,DELETE,POST';

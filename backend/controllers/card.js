@@ -1,8 +1,8 @@
 const Card = require('../models/card');
 const getUserId = require('../utils/getUserId');
-const AuthError = require('../middlewares/authError');
-const IncorrectRequesError = require('../middlewares/incorrectRequestError');
-const NotFoundError = require('../middlewares/notFoundError');
+const IncorrectRequesError = require('../errors/incorrectRequestError');
+const NotFoundError = require('../errors/notFoundError');
+const ForbiddenError = require('../errors/forbiddenError');
 
 const getCards = (req, res, next) => {
   Card.find({})
@@ -15,8 +15,12 @@ const createCard = (req, res, next) => {
 
   Card.create({ name, link, owner: getUserId(req) })
     .then((card) => res.send(card))
-    .catch(() => {
-      next(new IncorrectRequesError('Переданы некорректные данные при создании карточки'));
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        next(new IncorrectRequesError('Переданы некорректные данные при создании карточки'));
+      } else {
+        next(err);
+      }
     });
 };
 
@@ -39,7 +43,7 @@ const deleteCard = (req, res, next) => {
           })
           .catch(next);
       } else {
-        throw new AuthError('Недостаточно прав для удаления карточки');
+        throw new ForbiddenError('Недостаточно прав для удаления карточки');
       }
     })
     .catch((err) => {

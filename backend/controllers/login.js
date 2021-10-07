@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 const validator = require('validator');
 const User = require('../models/user');
-const AuthError = require('../middlewares/authError');
-const IncorrectRequestError = require('../middlewares/incorrectRequestError');
+const AuthError = require('../errors/authError');
+const IncorrectRequestError = require('../errors/incorrectRequestError');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 

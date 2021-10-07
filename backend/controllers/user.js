@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const getUserId = require('../utils/getUserId');
-const IncorrectRequesError = require('../middlewares/incorrectRequestError');
-const NotFoundError = require('../middlewares/notFoundError');
+const IncorrectRequesError = require('../errors/incorrectRequestError');
+const NotFoundError = require('../errors/notFoundError');
 
 const getUsers = (req, res, next) => {
   User.find({})

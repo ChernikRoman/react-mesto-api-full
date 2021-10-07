@@ -4,7 +4,7 @@ const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const auth = require('./middlewares/auth');
-const NotFoundError = require('./middlewares/notFoundError');
+const NotFoundError = require('./errors/notFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { corsHandler } = require('./middlewares/cors');
 
@@ -36,7 +36,6 @@ app.use((req, res, next) => {
 
 app.use(errorLogger);
 app.use(errors());
-
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = 'Ошибка сервера' } = err;

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const userSchema = mongoose.Schema({
   name: {
@@ -16,21 +17,13 @@ const userSchema = mongoose.Schema({
   avatar: {
     type: String,
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
-    validate: (value) => {
-      // eslint-disable-next-line no-useless-escape
-      const regex = /^(https*:\/\/)(www.)?[\w.\/-]*(#$)*/gm;
-      return regex.test(value);
-    },
+    validate: (value) => validator.isURL(value),
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    validate: (value) => {
-      // eslint-disable-next-line no-useless-escape
-      const regex = /[\w.-]+@[\w]+.[\w]+/g;
-      return regex.test(value);
-    },
+    validate: (value) => validator.isEmail(value),
   },
   password: {
     type: String,
